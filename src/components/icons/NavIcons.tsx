@@ -3,29 +3,30 @@ interface IconProps {
   size?: number;
 }
 
-/** Minimal flat gamepad icon */
+const GAMES_CONTROLLER_SRC =
+  process.env.NODE_ENV === 'production' ? '/venifysite/icons/games-controller.png' : '/icons/games-controller.png';
+
+/** Filled gamepad silhouette — exact reference shape, color via currentColor */
 export function GamesIcon({ className = '', size = 24 }: IconProps) {
   return (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" className={className} aria-hidden>
-      <path
-        d="M6 8.5h12c1.65 0 3 1.35 3 3v2c0 1.05-.7 1.95-1.7 2.1l-.85.1c-.5.05-.95-.2-1.2-.6l-.95-1.55H9.7l-.95 1.55c-.25.4-.7.65-1.2.6l-.85-.1C5.7 15.45 5 14.55 5 13.5v-2c0-1.65 1.35-3 3-3z"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinejoin="round"
-      />
-      <path
-        d="M5 13.5c-.6.7-1.25 1.45-1.25 2.25 0 .9.7 1.5 1.45 1.5.55 0 1-.35 1.2-.9M19 13.5c.6.7 1.25 1.45 1.25 2.25 0 .9-.7 1.5-1.45 1.5-.55 0-1-.35-1.2-.9"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-      />
-      <path d="M12 15.25v2.25" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-      <path d="M8.25 11.75v2.75M7.25 13.25h3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-      <circle cx="15.5" cy="11.75" r="0.8" fill="currentColor" />
-      <circle cx="17.5" cy="11.75" r="0.8" fill="currentColor" />
-      <circle cx="15.5" cy="13.75" r="0.8" fill="currentColor" />
-      <circle cx="17.5" cy="13.75" r="0.8" fill="currentColor" />
-    </svg>
+    <span
+      aria-hidden
+      className={className}
+      style={{
+        display: 'inline-block',
+        width: size,
+        height: size,
+        backgroundColor: 'currentColor',
+        WebkitMaskImage: `url(${GAMES_CONTROLLER_SRC})`,
+        WebkitMaskRepeat: 'no-repeat',
+        WebkitMaskPosition: 'center',
+        WebkitMaskSize: 'contain',
+        maskImage: `url(${GAMES_CONTROLLER_SRC})`,
+        maskRepeat: 'no-repeat',
+        maskPosition: 'center',
+        maskSize: 'contain',
+      }}
+    />
   );
 }
 
