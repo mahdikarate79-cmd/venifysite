@@ -1,8 +1,10 @@
 'use client';
 
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useLocale } from '@/i18n/LocaleProvider';
-import { GamesIcon, ChatIcon, HelpIcon, ProfileIcon } from '@/components/icons/NavIcons';
+import GamesGlassIcon, { type GamesIconState } from '@/components/icons/GamesGlassIcon';
+import { ChatIcon, HelpIcon, ProfileIcon } from '@/components/icons/NavIcons';
 
 type NavItem = 'games' | 'chat' | 'help' | 'profile';
 
@@ -10,32 +12,50 @@ interface BottomNavProps {
   active: NavItem;
 }
 
+type StandardIcon = typeof ChatIcon;
+
 export default function BottomNav({ active }: BottomNavProps) {
   const { t } = useLocale();
+  const [hovered, setHovered] = useState<NavItem | null>(null);
 
-  const centerItems: { id: NavItem; icon: typeof GamesIcon; label: string; disabled: boolean }[] = [
-    { id: 'games', icon: GamesIcon, label: t.games, disabled: true },
+  const centerItems: {
+    id: NavItem;
+    icon?: StandardIcon;
+    label: string;
+    disabled: boolean;
+    isGames?: boolean;
+  }[] = [
+    { id: 'games', label: t.games, disabled: true, isGames: true },
     { id: 'chat', icon: ChatIcon, label: t.chat, disabled: true },
     { id: 'help', icon: HelpIcon, label: t.help, disabled: false },
   ];
 
+  const resolveGamesState = (itemId: NavItem, isActive: boolean, disabled: boolean): GamesIconState => {
+    if (disabled) return 'disabled';
+    if (isActive) return 'active';
+    if (hovered === itemId) return 'hover';
+    return 'normal';
+  };
+
   return (
     <nav className="fixed bottom-0 inset-x-0 z-30 pb-safe">
       <div className="flex items-center justify-center gap-3 px-4 pb-6 pt-2">
-        {/* Center grouped buttons */}
         <div className="glass-nav-group flex items-center">
           {centerItems.map((item) => {
             const Icon = item.icon;
             const isActive = active === item.id;
+            const isGames = item.isGames === true;
 
             return (
               <button
                 key={item.id}
                 disabled={item.disabled}
                 aria-label={item.label}
-                className={`nav-btn relative ${isActive ? 'nav-btn-active' : ''} ${
+                onMouseEnter={() => setHovered(item.id)}
+                onMouseLeave={() => setHovered(null)}
+                className={`nav-btn group relative ${isActive ? 'nav-btn-active' : ''} ${
                   item.disabled ? 'nav-btn-disabled' : ''
-                }`}
+                } ${isGames ? 'nav-btn-games' : ''} ${isActive && isGames ? 'nav-btn-games-active' : ''}`}
               >
                 {isActive && (
                   <motion.div
@@ -44,18 +64,33 @@ export default function BottomNav({ active }: BottomNavProps) {
                     transition={{ type: 'spring', stiffness: 400, damping: 30 }}
                   />
                 )}
-                <Icon
-                  className={`relative z-10 w-6 h-6 transition-colors duration-300 ${
-                    isActive ? 'text-accent' : item.disabled ? 'text-white/30' : 'text-white/60'
-                  }`}
-                  size={24}
-                />
+
+                {isGames ? (
+                  <motion.div
+                    className="relative z-10 flex items-center justify-center"
+                    animate={{ scale: isActive ? 1.08 : hovered === item.id && !item.disabled ? 1.04 : 1 }}
+                    transition={{ type: 'spring', stiffness: 420, damping: 26 }}
+                  >
+                    <GamesGlassIcon
+                      size={26}
+                      state={resolveGamesState(item.id, isActive, item.disabled)}
+                    />
+                  </motion.div>
+                ) : (
+                  Icon && (
+                    <Icon
+                      className={`relative z-10 w-6 h-6 transition-colors duration-300 ${
+                        isActive ? 'text-accent' : item.disabled ? 'text-white/30' : 'text-white/60'
+                      }`}
+                      size={24}
+                    />
+                  )
+                )}
               </button>
             );
           })}
         </div>
 
-        {/* Separate profile button */}
         <button
           disabled
           aria-label={t.profile}
