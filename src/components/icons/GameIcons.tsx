@@ -49,30 +49,33 @@ export function ChimojiIcon({ size = 48, color = '#FBBF24' }: GameIconProps) {
 export function TruthOrDareIcon({ size = 48, color = '#22C55E' }: GameIconProps) {
   return (
     <IconWrapper size={size}>
-      <path
-        d="M20 8 L28 10 L28 34 C28 38 24 40 20 38 L20 8 Z"
-        fill={color}
-        fillOpacity="0.2"
-        stroke={color}
-        strokeWidth="1.5"
-        strokeLinejoin="round"
-      />
-      <path d="M20 8 L28 10 V14 L20 12 Z" fill={color} fillOpacity="0.35" stroke={color} strokeWidth="1" />
-      <rect x="18" y="6" width="8" height="3" rx="1" fill={color} fillOpacity="0.5" />
-      <ellipse cx="24" cy="28" rx="4" ry="6" fill={color} fillOpacity="0.15" stroke={color} strokeWidth="1" />
-      <path d="M22 34 L24 40 L26 34" stroke={color} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+      <ellipse cx="24" cy="24" rx="18" ry="6" fill={color} fillOpacity="0.08" transform="rotate(-25 24 24)" />
+      <g transform="rotate(-28 24 26)">
+        <rect x="10" y="22" width="26" height="10" rx="5" fill={color} fillOpacity="0.25" stroke={color} strokeWidth="1.5" />
+        <path d="M10 24 C10 20 12 16 16 15 H22 C26 16 28 20 28 24" fill={color} fillOpacity="0.35" stroke={color} strokeWidth="1.5" />
+        <rect x="14" y="13" width="8" height="4" rx="1.5" fill={color} fillOpacity="0.5" stroke={color} strokeWidth="1" />
+        <ellipse cx="23" cy="27" rx="3" ry="2" fill="white" fillOpacity="0.2" />
+      </g>
+      <path d="M32 14 C36 16 38 20 36 24" stroke={color} strokeWidth="1.2" strokeLinecap="round" strokeDasharray="2 2" opacity="0.6" />
+      <path d="M34 12 L38 10 M36 16 L40 15" stroke={color} strokeWidth="1" strokeLinecap="round" opacity="0.5" />
     </IconWrapper>
   );
 }
 
 export function HotSeatIcon({ size = 48, color = '#FB7185' }: GameIconProps) {
+  const flame = '#F97316';
   return (
     <IconWrapper size={size}>
-      <rect x="14" y="20" width="20" height="10" rx="2" fill={color} fillOpacity="0.2" stroke={color} strokeWidth="1.5" />
-      <path d="M16 20 V14 H32 V20" stroke={color} strokeWidth="1.5" strokeLinejoin="round" fill={color} fillOpacity="0.1" />
-      <path d="M12 30 V38 M36 30 V38" stroke={color} strokeWidth="2" strokeLinecap="round" />
-      <path d="M10 38 H14 M34 38 H38" stroke={color} strokeWidth="2" strokeLinecap="round" />
-      <path d="M18 14 V10 M30 14 V10" stroke={color} strokeWidth="1.5" strokeLinecap="round" />
+      <path d="M14 36 C12 32 11 28 13 24 C14 22 16 20 18 20" stroke={flame} strokeWidth="1.5" strokeLinecap="round" fill="none" opacity="0.7" />
+      <path d="M34 36 C36 32 37 28 35 24 C34 22 32 20 30 20" stroke={flame} strokeWidth="1.5" strokeLinecap="round" fill="none" opacity="0.7" />
+      <path d="M20 38 C20 34 22 30 24 28 C26 30 28 34 28 38" fill={flame} fillOpacity="0.3" stroke={flame} strokeWidth="1" />
+      <path d="M24 10 C22 14 20 16 20 18 C20 20 22 20 24 16 C26 20 28 20 28 18 C28 16 26 14 24 10 Z" fill={flame} fillOpacity="0.45" stroke={flame} strokeWidth="1" />
+      <path d="M14 22 L16 18 L32 18 L34 22 L34 28 C34 30 32 32 30 32 H18 C16 32 14 30 14 28 Z" fill={color} fillOpacity="0.25" stroke={color} strokeWidth="1.5" strokeLinejoin="round" />
+      <path d="M16 22 L18 18 H30 L32 22" fill={color} fillOpacity="0.15" stroke={color} strokeWidth="1" />
+      <rect x="17" y="28" width="3" height="8" rx="1" fill={color} fillOpacity="0.3" stroke={color} strokeWidth="1" />
+      <rect x="28" y="28" width="3" height="8" rx="1" fill={color} fillOpacity="0.3" stroke={color} strokeWidth="1" />
+      <path d="M15 36 H33" stroke={color} strokeWidth="1.5" strokeLinecap="round" opacity="0.5" />
+      <ellipse cx="24" cy="20" rx="8" ry="3" fill="white" fillOpacity="0.12" />
     </IconWrapper>
   );
 }
@@ -124,17 +127,30 @@ export function RockPaperScissorsIcon({ size = 48, color = '#A78BFA' }: GameIcon
   return (
     <IconWrapper size={size}>
       <path
-        d="M14 32 C14 32 12 28 14 24 C15 22 18 20 22 20 C24 20 26 21 27 23 C28 25 28 28 26 30 C24 32 20 34 16 34 C15 34 14 33 14 32 Z"
+        d="M16 34 C14 34 12 32 12 29 C12 26 13 23 15 21 C16 20 17 19 18 19 C19 19 20 20 20 22 C20 24 19 26 18 28 L16 34 Z"
         fill={color}
         fillOpacity="0.2"
         stroke={color}
         strokeWidth="1.5"
         strokeLinejoin="round"
       />
-      <path d="M22 20 L26 14 L30 16 L28 22" stroke={color} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="none" />
-      <path d="M26 14 L30 12" stroke={color} strokeWidth="1.5" strokeLinecap="round" />
-      <path d="M30 16 L34 18" stroke={color} strokeWidth="1.5" strokeLinecap="round" />
-      <path d="M16 34 L12 38 M20 34 L18 40" stroke={color} strokeWidth="1.5" strokeLinecap="round" />
+      <path
+        d="M20 22 C21 18 22 14 24 12 C25 11 27 11 28 13 C29 15 29 18 28 21 L26 28"
+        stroke={color}
+        strokeWidth="2"
+        strokeLinecap="round"
+        fill="none"
+      />
+      <path
+        d="M24 12 C25 10 27 9 29 10 C31 11 32 14 31 17 L29 24"
+        stroke={color}
+        strokeWidth="2"
+        strokeLinecap="round"
+        fill="none"
+      />
+      <circle cx="18" cy="19" r="3" fill={color} fillOpacity="0.25" stroke={color} strokeWidth="1.5" />
+      <path d="M14 34 L11 38 M18 34 L17 39" stroke={color} strokeWidth="1.5" strokeLinecap="round" />
+      <ellipse cx="22" cy="16" rx="2" ry="3" fill="white" fillOpacity="0.15" transform="rotate(-15 22 16)" />
     </IconWrapper>
   );
 }
@@ -155,36 +171,38 @@ export function DuelDiceIcon({ size = 48, color = '#3767FA' }: GameIconProps) {
 export function DuelBowlingIcon({ size = 48, color = '#F97316' }: GameIconProps) {
   return (
     <IconWrapper size={size}>
-      <path
-        d="M30 10 C30 10 34 14 34 22 C34 30 30 36 28 38 L26 36 C28 34 31 29 31 22 C31 16 28 12 28 12 Z"
-        fill={color}
-        fillOpacity="0.25"
-        stroke={color}
-        strokeWidth="1.5"
-        strokeLinejoin="round"
-      />
-      <ellipse cx="28" cy="12" rx="3" ry="2" fill={color} fillOpacity="0.4" stroke={color} strokeWidth="1" />
-      <circle cx="16" cy="34" r="5" fill={color} fillOpacity="0.2" stroke={color} strokeWidth="1.5" />
-      <circle cx="16" cy="34" r="1.5" fill={color} />
-      <path d="M10 38 H38" stroke={color} strokeWidth="1.5" strokeLinecap="round" strokeOpacity="0.4" />
+      <path d="M8 38 H40" stroke={color} strokeWidth="1" strokeOpacity="0.3" strokeLinecap="round" />
+      <path d="M22 12 L24 8 L26 12 L24 22 Z" fill={color} fillOpacity="0.3" stroke={color} strokeWidth="1.5" strokeLinejoin="round" />
+      <path d="M18 14 L20 10 L22 14 L20 22 Z" fill={color} fillOpacity="0.2" stroke={color} strokeWidth="1.5" strokeLinejoin="round" />
+      <path d="M26 14 L28 10 L30 14 L28 22 Z" fill={color} fillOpacity="0.2" stroke={color} strokeWidth="1.5" strokeLinejoin="round" />
+      <ellipse cx="20" cy="10" rx="2" ry="1.5" fill={color} fillOpacity="0.4" />
+      <ellipse cx="24" cy="8" rx="2" ry="1.5" fill={color} fillOpacity="0.4" />
+      <ellipse cx="28" cy="10" rx="2" ry="1.5" fill={color} fillOpacity="0.4" />
+      <circle cx="34" cy="32" r="6" fill={color} fillOpacity="0.25" stroke={color} strokeWidth="1.5" />
+      <circle cx="32.5" cy="31" r="1" fill={color} fillOpacity="0.5" />
+      <circle cx="35.5" cy="31" r="1" fill={color} fillOpacity="0.5" />
+      <circle cx="34" cy="33.5" r="1" fill={color} fillOpacity="0.5" />
+      <ellipse cx="33" cy="30" rx="2" ry="1.5" fill="white" fillOpacity="0.2" />
     </IconWrapper>
   );
 }
 
-export function DuelFootballIcon({ size = 48, color = '#22C55E' }: GameIconProps) {
+export function DuelFootballIcon({ size = 48 }: GameIconProps) {
+  const black = '#1a1a1a';
   return (
     <IconWrapper size={size}>
-      <circle cx="24" cy="24" r="15" fill="white" fillOpacity="0.9" stroke={color} strokeWidth="1.5" />
+      <circle cx="24" cy="24" r="15" fill="white" fillOpacity="0.95" stroke={black} strokeWidth="1.5" />
       <path
-        d="M24 12 L28 18 L26 26 L22 26 L20 18 Z"
-        fill={color}
-        fillOpacity="0.3"
-        stroke={color}
-        strokeWidth="1"
+        d="M24 11 L28.5 16 L27 23 L21 23 L19.5 16 Z"
+        fill={black}
+        fillOpacity="0.85"
+        stroke={black}
+        strokeWidth="0.8"
         strokeLinejoin="round"
       />
-      <path d="M24 12 L20 18 M24 12 L28 18 M20 18 L16 22 M28 18 L32 22 M16 22 L18 28 M32 22 L30 28 M18 28 L22 26 M30 28 L26 26" stroke={color} strokeWidth="0.8" strokeOpacity="0.5" />
-      <path d="M12 24 L16 22 M36 24 L32 22 M24 36 L22 26 M24 36 L26 26" stroke={color} strokeWidth="0.8" strokeOpacity="0.5" />
+      <path d="M24 11 L19.5 16 M24 11 L28.5 16 M19.5 16 L14 19 M28.5 16 L34 19" stroke={black} strokeWidth="0.7" opacity="0.6" />
+      <path d="M14 19 L16 25 M34 19 L32 25 M16 25 L21 23 M32 25 L27 23 M16 25 L19 31 M32 25 L29 31 M19 31 L24 37 M29 31 L24 37" stroke={black} strokeWidth="0.7" opacity="0.6" />
+      <ellipse cx="20" cy="18" rx="4" ry="2.5" fill="white" fillOpacity="0.3" transform="rotate(-30 20 18)" />
     </IconWrapper>
   );
 }
@@ -216,18 +234,21 @@ export function RussianRouletteIcon({ size = 48, color = '#DC2626' }: GameIconPr
   return (
     <IconWrapper size={size}>
       <path
-        d="M28 10 C32 10 36 14 36 20 L36 30 C36 34 33 38 28 38 L20 38 C16 38 14 35 14 32 L14 22 L10 18 L14 14 L18 10 Z"
+        d="M30 12 C34 12 37 15 37 20 V28 C37 32 34 35 30 35 H22 C19 35 17 33 16 30 L12 26 L16 20 L20 14 H28 C29 13 29.5 12 30 12 Z"
         fill={color}
         fillOpacity="0.15"
         stroke={color}
         strokeWidth="1.5"
         strokeLinejoin="round"
       />
-      <rect x="18" y="14" width="12" height="6" rx="1" fill={color} fillOpacity="0.25" stroke={color} strokeWidth="1" />
-      <circle cx="24" cy="28" r="4" stroke={color} strokeWidth="1.5" fill="none" />
-      <circle cx="24" cy="28" r="1.5" fill={color} />
-      <path d="M10 18 L6 16" stroke={color} strokeWidth="2" strokeLinecap="round" />
-      <path d="M36 20 L40 18" stroke={color} strokeWidth="1.5" strokeLinecap="round" />
+      <rect x="20" y="16" width="10" height="8" rx="2" fill={color} fillOpacity="0.25" stroke={color} strokeWidth="1" />
+      <circle cx="25" cy="28" r="5" stroke={color} strokeWidth="1.5" fill={color} fillOpacity="0.1" />
+      <circle cx="25" cy="28" r="2" fill={color} fillOpacity="0.4" />
+      <circle cx="25" cy="28" r="0.8" fill="white" fillOpacity="0.5" />
+      <rect x="14" y="26" width="6" height="10" rx="2" fill={color} fillOpacity="0.3" stroke={color} strokeWidth="1.2" transform="rotate(-10 17 31)" />
+      <path d="M12 26 L8 24" stroke={color} strokeWidth="2" strokeLinecap="round" />
+      <path d="M37 22 L41 20" stroke={color} strokeWidth="1.5" strokeLinecap="round" />
+      <ellipse cx="28" cy="16" rx="4" ry="2" fill="white" fillOpacity="0.15" />
     </IconWrapper>
   );
 }
@@ -276,23 +297,24 @@ export function FishingIcon({ size = 48, color = '#06B6D4' }: GameIconProps) {
   return (
     <IconWrapper size={size}>
       <path
-        d="M10 8 C10 8 14 6 20 10 C26 14 30 12 34 14"
+        d="M8 10 L20 14 L32 10"
         stroke={color}
-        strokeWidth="1.5"
-        fill="none"
-        strokeLinecap="round"
-      />
-      <path d="M34 14 L30 36" stroke={color} strokeWidth="1.5" strokeLinecap="round" />
-      <path
-        d="M30 36 C28 40 24 42 20 38 C16 34 18 30 22 30 C24 30 26 32 28 34"
-        stroke={color}
-        strokeWidth="1.5"
-        fill="none"
+        strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
+        fill="none"
       />
-      <path d="M28 34 L32 38" stroke={color} strokeWidth="1.2" strokeLinecap="round" />
-      <circle cx="32" cy="38" r="1" fill={color} />
+      <path d="M32 10 L28 34" stroke={color} strokeWidth="1.8" strokeLinecap="round" />
+      <path
+        d="M28 34 C26 38 22 40 18 36 C14 32 16 28 20 28 C22 28 24 30 25 32"
+        stroke={color}
+        strokeWidth="1.5"
+        fill="none"
+        strokeLinecap="round"
+      />
+      <path d="M25 32 L28 38 L26 40 L23 36 Z" fill={color} fillOpacity="0.35" stroke={color} strokeWidth="1.2" strokeLinejoin="round" />
+      <circle cx="8" cy="10" r="2" fill={color} fillOpacity="0.3" stroke={color} strokeWidth="1" />
+      <ellipse cx="14" cy="12" rx="3" ry="1.5" fill="white" fillOpacity="0.15" transform="rotate(-20 14 12)" />
     </IconWrapper>
   );
 }
