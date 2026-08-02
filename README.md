@@ -6,6 +6,14 @@ A modern, minimal, and visually calming web mini-app for the VeniFy Telegram gam
 
 **https://mahdikarate79-cmd.github.io/venifysite/**
 
+> **First-time setup:** Enable GitHub Pages in your repo settings:
+> 1. Go to [Settings → Pages](https://github.com/mahdikarate79-cmd/venifysite/settings/pages)
+> 2. Under **Source**, select **Deploy from a branch**
+> 3. Choose branch: `gh-pages`, folder: `/ (root)`
+> 4. Click **Save**
+>
+> The site will be live within 1–2 minutes after saving.
+
 ## Features
 
 - Dark space-inspired theme with liquid glass UI effects
