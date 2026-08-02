@@ -3,8 +3,8 @@ interface IconProps {
   size?: number;
 }
 
-const GAMES_CONTROLLER_SRC =
-  process.env.NODE_ENV === 'production' ? '/venifysite/icons/games-controller.png' : '/icons/games-controller.png';
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+const GAMES_CONTROLLER_SRC = `${basePath}/icons/games-controller.png`;
 
 /** Filled gamepad silhouette — exact reference shape, color via currentColor */
 export function GamesIcon({ className = '', size = 24 }: IconProps) {

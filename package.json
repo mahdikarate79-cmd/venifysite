@@ -5,6 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "build:static": "next build",
+    "build:github-pages": "NEXT_PUBLIC_BASE_PATH=/venifysite next build",
     "start": "next start",
     "lint": "next lint"
   },
