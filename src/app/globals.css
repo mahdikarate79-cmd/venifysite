@@ -91,41 +91,6 @@ body {
     pointer-events: none;
   }
 
-  .nav-btn-games {
-    @apply transition-all duration-300;
-  }
-
-  .nav-btn-games:not(.nav-btn-disabled):hover {
-    box-shadow: 0 0 20px rgba(55, 103, 250, 0.22);
-  }
-
-  .nav-btn-games-active {
-    box-shadow:
-      0 0 24px rgba(55, 103, 250, 0.38),
-      0 0 48px rgba(55, 103, 250, 0.12);
-  }
-
-  .games-glass-icon {
-    @apply transition-all duration-300;
-    transform-origin: center;
-  }
-
-  .games-glass-icon--hover {
-    filter: brightness(1.08);
-  }
-
-  .games-glass-icon--active {
-    filter: brightness(1.14) drop-shadow(0 0 6px rgba(55, 103, 250, 0.55));
-  }
-
-  .games-glass-icon--disabled {
-    filter: saturate(0.85) brightness(0.92);
-  }
-
-  .nav-btn-games.nav-btn-disabled {
-    opacity: 1;
-  }
-
   .brand-glow {
     text-shadow: 0 0 20px rgba(55, 103, 250, 0.4);
   }
