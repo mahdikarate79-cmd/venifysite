@@ -41,8 +41,8 @@ export default function GameModal({ game, onClose }: GameModalProps) {
             <div className="glass-card p-6">
               <div className="flex items-start justify-between mb-5">
                 <div className="flex items-center gap-4">
-                  <div className="w-16 h-16 rounded-2xl flex items-center justify-center bg-white/5">
-                    <IconComponent size={48} color={game.color} />
+                  <div className="w-16 h-16 rounded-2xl flex items-center justify-center bg-white/5 overflow-hidden p-1">
+                    <IconComponent size={56} color={game.color} className="w-full h-full" />
                   </div>
                   <div>
                     <h2 className="text-xl font-semibold text-white/95">{gameData.name}</h2>

@@ -7,22 +7,17 @@ export function GamesIcon({ className = '', size = 24 }: IconProps) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="none" className={className}>
       <path
-        d="M7.5 9.5h9a2.5 2.5 0 0 1 2.5 2.5v1.5a3.5 3.5 0 0 1-3.5 3.5h-1a3.5 3.5 0 0 1-3.5-3.5V12a2.5 2.5 0 0 1 2.5-2.5z"
+        d="M6 10.5h12a3 3 0 0 1 3 3v1.5a4 4 0 0 1-4 4h-2a4 4 0 0 1-4-4V13.5a3 3 0 0 1 3-3z"
         stroke="currentColor"
-        strokeWidth="1.5"
+        strokeWidth="1.6"
         strokeLinejoin="round"
       />
-      <path
-        d="M4.5 13.5v2.5c0 1 .8 1.5 1.5 1.5M19.5 13.5v2.5c0 1-.8 1.5-1.5 1.5"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-      />
-      <path d="M8.5 12.5h1.5M9.25 11.75v1.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-      <circle cx="14.5" cy="12" r="0.9" fill="currentColor" />
-      <circle cx="16.5" cy="13.5" r="0.9" fill="currentColor" />
-      <circle cx="14.5" cy="15" r="0.9" fill="currentColor" />
-      <circle cx="12.5" cy="13.5" r="0.9" fill="currentColor" />
+      <path d="M3.5 14v3.5a1.5 1.5 0 0 0 1.5 1.5M20.5 14v3.5a1.5 1.5 0 0 1-1.5 1.5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+      <path d="M8 13h2M9 12v2" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+      <circle cx="14.5" cy="13" r="1.1" fill="currentColor" />
+      <circle cx="16.5" cy="15" r="1.1" fill="currentColor" />
+      <circle cx="14.5" cy="17" r="1.1" fill="currentColor" />
+      <circle cx="12.5" cy="15" r="1.1" fill="currentColor" />
     </svg>
   );
 }
