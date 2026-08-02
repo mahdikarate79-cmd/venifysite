@@ -5,17 +5,19 @@ interface IconProps {
 
 export function GamesIcon({ className = '', size = 24 }: IconProps) {
   return (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" className={className}>
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" className={className} aria-hidden>
       <path
-        d="M8 10h8a3 3 0 0 1 3 3v2a4 4 0 0 1-4 4h-1a4 4 0 0 1-4-4v-2a3 3 0 0 1 3-3z"
+        d="M8 10h8a3 3 0 0 1 3 3v1.5a3.5 3.5 0 0 1-3.5 3.5h-1A3.5 3.5 0 0 1 11 14.5V13a3 3 0 0 1 3-3z"
         stroke="currentColor"
         strokeWidth="1.5"
         strokeLinejoin="round"
       />
-      <path d="M5 14v3M19 14v3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-      <path d="M9 13.5h2M10 12.5v2" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-      <circle cx="15.5" cy="13.5" r="1" fill="currentColor" />
-      <circle cx="17.5" cy="15.5" r="1" fill="currentColor" />
+      <path d="M5 13.5v2.5M19 13.5v2.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+      <path d="M9 13h1.5M9.75 12.25v1.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+      <circle cx="15" cy="12.5" r="0.85" fill="currentColor" />
+      <circle cx="17" cy="14" r="0.85" fill="currentColor" />
+      <circle cx="15" cy="15.5" r="0.85" fill="currentColor" />
+      <circle cx="13" cy="14" r="0.85" fill="currentColor" />
     </svg>
   );
 }

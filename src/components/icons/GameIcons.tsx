@@ -49,18 +49,13 @@ export function ChimojiIcon({ size = 48, color = '#FBBF24' }: GameIconProps) {
 export function TruthOrDareIcon({ size = 48, color = '#22C55E' }: GameIconProps) {
   return (
     <IconWrapper size={size}>
-      <path
-        d="M20 8 L28 10 L28 34 C28 38 24 40 20 38 L20 8 Z"
-        fill={color}
-        fillOpacity="0.2"
-        stroke={color}
-        strokeWidth="1.5"
-        strokeLinejoin="round"
-      />
-      <path d="M20 8 L28 10 V14 L20 12 Z" fill={color} fillOpacity="0.35" stroke={color} strokeWidth="1" />
-      <rect x="18" y="6" width="8" height="3" rx="1" fill={color} fillOpacity="0.5" />
-      <ellipse cx="24" cy="28" rx="4" ry="6" fill={color} fillOpacity="0.15" stroke={color} strokeWidth="1" />
-      <path d="M22 34 L24 40 L26 34" stroke={color} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+      <g transform="rotate(-40 24 24)">
+        <rect x="18" y="10" width="10" height="26" rx="4" fill={color} fillOpacity="0.2" stroke={color} strokeWidth="2" />
+        <path d="M18 14 H28 V18 C28 20 26 22 23 22 H18 Z" fill={color} fillOpacity="0.35" stroke={color} strokeWidth="1.5" />
+        <rect x="20" y="6" width="6" height="5" rx="1.5" fill={color} fillOpacity="0.5" stroke={color} strokeWidth="1.5" />
+        <path d="M21 4 L23 2 L25 4" stroke={color} strokeWidth="1.5" strokeLinecap="round" fill="none" />
+        <ellipse cx="23" cy="28" rx="3" ry="5" fill={color} fillOpacity="0.15" stroke={color} strokeWidth="1.2" />
+      </g>
     </IconWrapper>
   );
 }
@@ -68,11 +63,11 @@ export function TruthOrDareIcon({ size = 48, color = '#22C55E' }: GameIconProps)
 export function HotSeatIcon({ size = 48, color = '#FB7185' }: GameIconProps) {
   return (
     <IconWrapper size={size}>
-      <rect x="14" y="20" width="20" height="10" rx="2" fill={color} fillOpacity="0.2" stroke={color} strokeWidth="1.5" />
-      <path d="M16 20 V14 H32 V20" stroke={color} strokeWidth="1.5" strokeLinejoin="round" fill={color} fillOpacity="0.1" />
-      <path d="M12 30 V38 M36 30 V38" stroke={color} strokeWidth="2" strokeLinecap="round" />
-      <path d="M10 38 H14 M34 38 H38" stroke={color} strokeWidth="2" strokeLinecap="round" />
-      <path d="M18 14 V10 M30 14 V10" stroke={color} strokeWidth="1.5" strokeLinecap="round" />
+      <path d="M14 18 H34 V20 C34 22 32 24 30 24 H18 C16 24 14 22 14 20 Z" fill={color} fillOpacity="0.2" stroke={color} strokeWidth="2" strokeLinejoin="round" />
+      <path d="M16 18 V14 H32 V18" stroke={color} strokeWidth="2" strokeLinejoin="round" fill="none" />
+      <line x1="18" y1="24" x2="18" y2="36" stroke={color} strokeWidth="2.5" strokeLinecap="round" />
+      <line x1="30" y1="24" x2="30" y2="36" stroke={color} strokeWidth="2.5" strokeLinecap="round" />
+      <line x1="15" y1="36" x2="33" y2="36" stroke={color} strokeWidth="2.5" strokeLinecap="round" />
     </IconWrapper>
   );
 }
@@ -123,18 +118,19 @@ export function LudoIcon({ size = 48, color = '#2DD4BF' }: GameIconProps) {
 export function RockPaperScissorsIcon({ size = 48, color = '#A78BFA' }: GameIconProps) {
   return (
     <IconWrapper size={size}>
-      <path
-        d="M14 32 C14 32 12 28 14 24 C15 22 18 20 22 20 C24 20 26 21 27 23 C28 25 28 28 26 30 C24 32 20 34 16 34 C15 34 14 33 14 32 Z"
-        fill={color}
-        fillOpacity="0.2"
-        stroke={color}
-        strokeWidth="1.5"
-        strokeLinejoin="round"
-      />
-      <path d="M22 20 L26 14 L30 16 L28 22" stroke={color} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="none" />
-      <path d="M26 14 L30 12" stroke={color} strokeWidth="1.5" strokeLinecap="round" />
-      <path d="M30 16 L34 18" stroke={color} strokeWidth="1.5" strokeLinecap="round" />
-      <path d="M16 34 L12 38 M20 34 L18 40" stroke={color} strokeWidth="1.5" strokeLinecap="round" />
+      <g transform="rotate(-25 24 24)">
+        <path
+          d="M14 36 C11 36 9 33 9 29 C9 25 11 21 14 19 C16 17 18 17 19 18 C20 19 20 21 19 24 L17 36 Z"
+          fill={color}
+          fillOpacity="0.2"
+          stroke={color}
+          strokeWidth="2"
+          strokeLinejoin="round"
+        />
+        <path d="M19 18 C20 14 22 10 25 8 C27 7 29 8 30 11 C31 14 30 18 28 22 L25 30" stroke={color} strokeWidth="2.5" strokeLinecap="round" fill="none" />
+        <path d="M25 8 C27 6 30 6 32 8 C34 10 34 14 32 18 L29 26" stroke={color} strokeWidth="2.5" strokeLinecap="round" fill="none" />
+        <circle cx="16" cy="18" r="4" fill={color} fillOpacity="0.25" stroke={color} strokeWidth="2" />
+      </g>
     </IconWrapper>
   );
 }
@@ -155,18 +151,14 @@ export function DuelDiceIcon({ size = 48, color = '#3767FA' }: GameIconProps) {
 export function DuelBowlingIcon({ size = 48, color = '#F97316' }: GameIconProps) {
   return (
     <IconWrapper size={size}>
-      <path
-        d="M30 10 C30 10 34 14 34 22 C34 30 30 36 28 38 L26 36 C28 34 31 29 31 22 C31 16 28 12 28 12 Z"
-        fill={color}
-        fillOpacity="0.25"
-        stroke={color}
-        strokeWidth="1.5"
-        strokeLinejoin="round"
-      />
-      <ellipse cx="28" cy="12" rx="3" ry="2" fill={color} fillOpacity="0.4" stroke={color} strokeWidth="1" />
-      <circle cx="16" cy="34" r="5" fill={color} fillOpacity="0.2" stroke={color} strokeWidth="1.5" />
-      <circle cx="16" cy="34" r="1.5" fill={color} />
-      <path d="M10 38 H38" stroke={color} strokeWidth="1.5" strokeLinecap="round" strokeOpacity="0.4" />
+      <ellipse cx="20" cy="12" rx="4" ry="2.5" fill={color} fillOpacity="0.35" stroke={color} strokeWidth="1.8" />
+      <path d="M16 14 L17 34 L23 34 L24 14 Z" fill={color} fillOpacity="0.2" stroke={color} strokeWidth="2" strokeLinejoin="round" />
+      <rect x="17" y="16" width="6" height="3" rx="0.5" fill={color} fillOpacity="0.4" />
+      <rect x="17" y="22" width="6" height="3" rx="0.5" fill={color} fillOpacity="0.4" />
+      <circle cx="34" cy="32" r="7" fill={color} fillOpacity="0.2" stroke={color} strokeWidth="2" />
+      <circle cx="32" cy="31" r="1.2" fill={color} />
+      <circle cx="36" cy="31" r="1.2" fill={color} />
+      <circle cx="34" cy="34" r="1.2" fill={color} />
     </IconWrapper>
   );
 }
@@ -174,17 +166,10 @@ export function DuelBowlingIcon({ size = 48, color = '#F97316' }: GameIconProps)
 export function DuelFootballIcon({ size = 48, color = '#22C55E' }: GameIconProps) {
   return (
     <IconWrapper size={size}>
-      <circle cx="24" cy="24" r="15" fill="white" fillOpacity="0.9" stroke={color} strokeWidth="1.5" />
-      <path
-        d="M24 12 L28 18 L26 26 L22 26 L20 18 Z"
-        fill={color}
-        fillOpacity="0.3"
-        stroke={color}
-        strokeWidth="1"
-        strokeLinejoin="round"
-      />
-      <path d="M24 12 L20 18 M24 12 L28 18 M20 18 L16 22 M28 18 L32 22 M16 22 L18 28 M32 22 L30 28 M18 28 L22 26 M30 28 L26 26" stroke={color} strokeWidth="0.8" strokeOpacity="0.5" />
-      <path d="M12 24 L16 22 M36 24 L32 22 M24 36 L22 26 M24 36 L26 26" stroke={color} strokeWidth="0.8" strokeOpacity="0.5" />
+      <circle cx="24" cy="24" r="16" fill={color} fillOpacity="0.12" stroke={color} strokeWidth="2" />
+      <path d="M24 10 L29 16 L27.5 24 L20.5 24 L19 16 Z" fill={color} fillOpacity="0.35" stroke={color} strokeWidth="1.5" strokeLinejoin="round" />
+      <path d="M24 10 L19 16 M24 10 L29 16 M19 16 L13 19 M29 16 L35 19" stroke={color} strokeWidth="1.2" strokeLinecap="round" />
+      <path d="M13 19 L15 26 M35 19 L33 26 M15 26 L20.5 24 M33 26 L27.5 24 M15 26 L18 33 M33 26 L30 33 M18 33 L24 38 M30 33 L24 38" stroke={color} strokeWidth="1.2" strokeLinecap="round" />
     </IconWrapper>
   );
 }
@@ -203,11 +188,12 @@ export function DuelBasketballIcon({ size = 48, color = '#F59E0B' }: GameIconPro
 export function DuelDartIcon({ size = 48, color = '#EC4899' }: GameIconProps) {
   return (
     <IconWrapper size={size}>
-      <circle cx="24" cy="24" r="16" fill={color} fillOpacity="0.1" stroke={color} strokeWidth="1.5" />
-      <circle cx="24" cy="24" r="10" stroke={color} strokeWidth="1" strokeOpacity="0.4" />
-      <circle cx="24" cy="24" r="4" fill="#EF4444" fillOpacity="0.5" />
-      <circle cx="24" cy="24" r="1.5" fill="white" />
-      <path d="M24 8 L26 20 L24 24 L22 20 Z" fill={color} stroke={color} strokeWidth="0.5" />
+      <circle cx="24" cy="26" r="16" fill={color} fillOpacity="0.1" stroke={color} strokeWidth="2" />
+      <circle cx="24" cy="26" r="11" stroke={color} strokeWidth="1.5" />
+      <circle cx="24" cy="26" r="6" stroke={color} strokeWidth="1.5" />
+      <circle cx="24" cy="26" r="2.5" fill={color} fillOpacity="0.5" stroke={color} strokeWidth="1.5" />
+      <path d="M34 10 L28 22 L26 26 L24 24 Z" fill={color} fillOpacity="0.35" stroke={color} strokeWidth="1.5" strokeLinejoin="round" />
+      <path d="M34 10 L36 8 M34 10 L36 12" stroke={color} strokeWidth="1.5" strokeLinecap="round" />
     </IconWrapper>
   );
 }
@@ -215,19 +201,14 @@ export function DuelDartIcon({ size = 48, color = '#EC4899' }: GameIconProps) {
 export function RussianRouletteIcon({ size = 48, color = '#DC2626' }: GameIconProps) {
   return (
     <IconWrapper size={size}>
-      <path
-        d="M28 10 C32 10 36 14 36 20 L36 30 C36 34 33 38 28 38 L20 38 C16 38 14 35 14 32 L14 22 L10 18 L14 14 L18 10 Z"
-        fill={color}
-        fillOpacity="0.15"
-        stroke={color}
-        strokeWidth="1.5"
-        strokeLinejoin="round"
-      />
-      <rect x="18" y="14" width="12" height="6" rx="1" fill={color} fillOpacity="0.25" stroke={color} strokeWidth="1" />
-      <circle cx="24" cy="28" r="4" stroke={color} strokeWidth="1.5" fill="none" />
-      <circle cx="24" cy="28" r="1.5" fill={color} />
-      <path d="M10 18 L6 16" stroke={color} strokeWidth="2" strokeLinecap="round" />
-      <path d="M36 20 L40 18" stroke={color} strokeWidth="1.5" strokeLinecap="round" />
+      <path d="M32 14 H38 V18 H34 V22 H32 Z" fill={color} fillOpacity="0.25" stroke={color} strokeWidth="1.8" strokeLinejoin="round" />
+      <rect x="18" y="16" width="14" height="10" rx="2" fill={color} fillOpacity="0.2" stroke={color} strokeWidth="2" />
+      <circle cx="25" cy="28" r="8" fill={color} fillOpacity="0.1" stroke={color} strokeWidth="2" />
+      <circle cx="25" cy="28" r="3" fill={color} fillOpacity="0.35" stroke={color} strokeWidth="1.5" />
+      <rect x="10" y="26" width="8" height="13" rx="2" fill={color} fillOpacity="0.3" stroke={color} strokeWidth="2" transform="rotate(-8 14 32.5)" />
+      <path d="M9 26 L5 24" stroke={color} strokeWidth="2.5" strokeLinecap="round" />
+      <path d="M33 20 C35 18 37 18 39 20" stroke={color} strokeWidth="2" strokeLinecap="round" fill="none" />
+      <rect x="36" y="19" width="4" height="2" rx="0.5" fill={color} fillOpacity="0.4" />
     </IconWrapper>
   );
 }
@@ -275,24 +256,13 @@ export function DiceBetIcon({ size = 48, color = '#3B82F6' }: GameIconProps) {
 export function FishingIcon({ size = 48, color = '#06B6D4' }: GameIconProps) {
   return (
     <IconWrapper size={size}>
-      <path
-        d="M10 8 C10 8 14 6 20 10 C26 14 30 12 34 14"
-        stroke={color}
-        strokeWidth="1.5"
-        fill="none"
-        strokeLinecap="round"
-      />
-      <path d="M34 14 L30 36" stroke={color} strokeWidth="1.5" strokeLinecap="round" />
-      <path
-        d="M30 36 C28 40 24 42 20 38 C16 34 18 30 22 30 C24 30 26 32 28 34"
-        stroke={color}
-        strokeWidth="1.5"
-        fill="none"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <path d="M28 34 L32 38" stroke={color} strokeWidth="1.2" strokeLinecap="round" />
-      <circle cx="32" cy="38" r="1" fill={color} />
+      <path d="M6 8 C14 6 22 10 30 8" stroke={color} strokeWidth="2.5" strokeLinecap="round" fill="none" />
+      <line x1="30" y1="8" x2="26" y2="30" stroke={color} strokeWidth="2.5" strokeLinecap="round" />
+      <path d="M26 30 C23 34 18 35 15 32 C12 29 14 26 17 26 C19 26 21 28 22 30" stroke={color} strokeWidth="2" fill="none" strokeLinecap="round" />
+      <path d="M22 30 L26 38 L23 40 L19 34 Z" fill={color} fillOpacity="0.3" stroke={color} strokeWidth="1.8" strokeLinejoin="round" />
+      <ellipse cx="32" cy="36" rx="5" ry="3" fill={color} fillOpacity="0.25" stroke={color} strokeWidth="1.8" />
+      <path d="M36 36 L39 34" stroke={color} strokeWidth="1.8" strokeLinecap="round" />
+      <circle cx="6" cy="8" r="2" fill={color} fillOpacity="0.35" stroke={color} strokeWidth="1.5" />
     </IconWrapper>
   );
 }
