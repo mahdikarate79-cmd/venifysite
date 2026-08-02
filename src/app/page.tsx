@@ -1,5 +1,5 @@
-import HelpPage from '@/components/HelpPage';
+import HomeApp from '@/components/HomeApp';
 
 export default function Home() {
-  return <HelpPage />;
+  return <HomeApp />;
 }

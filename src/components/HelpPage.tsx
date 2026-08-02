@@ -9,7 +9,6 @@ import Header from '@/components/Header';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
 import GameCard from '@/components/GameCard';
 import GameModal from '@/components/GameModal';
-import BottomNav from '@/components/BottomNav';
 
 export default function HelpPage() {
   const { t } = useLocale();
@@ -43,7 +42,6 @@ export default function HelpPage() {
       </div>
 
       <GameModal game={selectedGame} onClose={() => setSelectedGame(null)} />
-      <BottomNav active="help" />
     </div>
   );
 }

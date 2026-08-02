@@ -94,6 +94,79 @@ body {
   .brand-glow {
     text-shadow: 0 0 20px rgba(55, 103, 250, 0.4);
   }
+
+  .chat-bubble-btn {
+    @apply relative overflow-hidden rounded-full px-10 py-4;
+    background: linear-gradient(
+      135deg,
+      rgba(55, 103, 250, 0.22) 0%,
+      rgba(255, 255, 255, 0.08) 45%,
+      rgba(55, 103, 250, 0.14) 100%
+    );
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(55, 103, 250, 0.35);
+    box-shadow:
+      0 8px 32px rgba(55, 103, 250, 0.2),
+      0 0 48px rgba(55, 103, 250, 0.1),
+      inset 0 1px 0 rgba(255, 255, 255, 0.18),
+      inset 0 -1px 0 rgba(55, 103, 250, 0.12);
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+  }
+
+  .chat-bubble-btn:hover {
+    border-color: rgba(55, 103, 250, 0.55);
+    box-shadow:
+      0 12px 40px rgba(55, 103, 250, 0.32),
+      0 0 64px rgba(55, 103, 250, 0.18),
+      inset 0 1px 0 rgba(255, 255, 255, 0.22),
+      inset 0 -1px 0 rgba(55, 103, 250, 0.16);
+  }
+
+  .chat-bubble-shimmer {
+    @apply absolute inset-0 pointer-events-none;
+    background: linear-gradient(
+      105deg,
+      transparent 35%,
+      rgba(255, 255, 255, 0.22) 48%,
+      rgba(55, 103, 250, 0.35) 52%,
+      transparent 65%
+    );
+    animation: chat-shimmer 3.5s ease-in-out infinite;
+  }
+
+  .chat-bubble-glow {
+    @apply absolute inset-0 rounded-full pointer-events-none opacity-60;
+    background: radial-gradient(circle at 50% 0%, rgba(55, 103, 250, 0.25), transparent 65%);
+  }
+
+  .shooting-star {
+    @apply absolute;
+    width: 72px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.9), rgba(55, 103, 250, 0.6), transparent);
+    box-shadow: 0 0 8px rgba(55, 103, 250, 0.5);
+    transform-origin: left center;
+  }
+}
+
+@keyframes chat-shimmer {
+  0% {
+    transform: translateX(-120%) skewX(-12deg);
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  45% {
+    transform: translateX(120%) skewX(-12deg);
+    opacity: 1;
+  }
+  60%,
+  100% {
+    transform: translateX(120%) skewX(-12deg);
+    opacity: 0;
+  }
 }
 
 .pb-safe {

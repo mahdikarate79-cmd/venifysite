@@ -4,18 +4,19 @@ import { motion } from 'framer-motion';
 import { useLocale } from '@/i18n/LocaleProvider';
 import { GamesIcon, ChatIcon, HelpIcon, ProfileIcon } from '@/components/icons/NavIcons';
 
-type NavItem = 'games' | 'chat' | 'help' | 'profile';
+export type NavItem = 'games' | 'chat' | 'help' | 'profile';
 
 interface BottomNavProps {
   active: NavItem;
+  onNavigate: (item: NavItem) => void;
 }
 
-export default function BottomNav({ active }: BottomNavProps) {
+export default function BottomNav({ active, onNavigate }: BottomNavProps) {
   const { t } = useLocale();
 
   const centerItems: { id: NavItem; icon: typeof GamesIcon; label: string; disabled: boolean }[] = [
     { id: 'games', icon: GamesIcon, label: t.games, disabled: true },
-    { id: 'chat', icon: ChatIcon, label: t.chat, disabled: true },
+    { id: 'chat', icon: ChatIcon, label: t.chat, disabled: false },
     { id: 'help', icon: HelpIcon, label: t.help, disabled: false },
   ];
 
@@ -30,8 +31,11 @@ export default function BottomNav({ active }: BottomNavProps) {
             return (
               <button
                 key={item.id}
+                type="button"
                 disabled={item.disabled}
                 aria-label={item.label}
+                aria-current={isActive ? 'page' : undefined}
+                onClick={() => !item.disabled && onNavigate(item.id)}
                 className={`nav-btn relative ${isActive ? 'nav-btn-active' : ''} ${
                   item.disabled ? 'nav-btn-disabled' : ''
                 }`}
@@ -55,6 +59,7 @@ export default function BottomNav({ active }: BottomNavProps) {
         </div>
 
         <button
+          type="button"
           disabled
           aria-label={t.profile}
           className="glass-nav-single nav-btn nav-btn-disabled"
