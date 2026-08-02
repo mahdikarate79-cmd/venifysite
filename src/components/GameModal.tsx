@@ -2,7 +2,7 @@
 
 import { motion, AnimatePresence } from 'framer-motion';
 import { useLocale } from '@/i18n/LocaleProvider';
-import { Game } from '@/data/games';
+import { Game, TELEGRAM_BOT_URL } from '@/data/games';
 import { gameIconMap } from '@/components/icons/GameIcons';
 import { CloseIcon } from '@/components/icons/NavIcons';
 
@@ -62,9 +62,14 @@ export default function GameModal({ game, onClose }: GameModalProps) {
               </p>
 
               <div className="flex justify-center">
-                <div className="px-5 py-2.5 rounded-full bg-accent/15 border border-accent/25 text-accent text-sm font-medium">
+                <a
+                  href={TELEGRAM_BOT_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-5 py-2.5 rounded-full bg-accent/15 border border-accent/25 text-accent text-sm font-medium transition-all duration-300 hover:bg-accent/25 hover:shadow-glow"
+                >
                   {t.playInBot}
-                </div>
+                </a>
               </div>
             </div>
           </motion.div>
