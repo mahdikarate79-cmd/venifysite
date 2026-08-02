@@ -3,21 +3,32 @@ interface IconProps {
   size?: number;
 }
 
+/** PS5 DualSense controller — monochrome nav icon */
 export function GamesIcon({ className = '', size = 24 }: IconProps) {
   return (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" className={className}>
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" className={className} aria-hidden>
+      {/* Body */}
       <path
-        d="M6 10.5h12a3 3 0 0 1 3 3v1.5a4 4 0 0 1-4 4h-2a4 4 0 0 1-4-4V13.5a3 3 0 0 1 3-3z"
+        d="M6.5 9.5 H17.5 A2.5 2.5 0 0 1 20 12 V13.5 A3.5 3.5 0 0 1 16.5 17 H7.5 A3.5 3.5 0 0 1 4 13.5 V12 A2.5 2.5 0 0 1 6.5 9.5 Z"
         stroke="currentColor"
-        strokeWidth="1.6"
+        strokeWidth="1.4"
         strokeLinejoin="round"
       />
-      <path d="M3.5 14v3.5a1.5 1.5 0 0 0 1.5 1.5M20.5 14v3.5a1.5 1.5 0 0 1-1.5 1.5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
-      <path d="M8 13h2M9 12v2" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
-      <circle cx="14.5" cy="13" r="1.1" fill="currentColor" />
-      <circle cx="16.5" cy="15" r="1.1" fill="currentColor" />
-      <circle cx="14.5" cy="17" r="1.1" fill="currentColor" />
-      <circle cx="12.5" cy="15" r="1.1" fill="currentColor" />
+      {/* Left handle */}
+      <path d="M4 13.5 V16.5 C4 18 5 19 6.5 19" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
+      {/* Right handle */}
+      <path d="M20 13.5 V16.5 C20 18 19 19 17.5 19" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
+      {/* Touchpad */}
+      <rect x="9" y="10.5" width="6" height="3" rx="1" stroke="currentColor" strokeWidth="1.2" />
+      {/* Left stick */}
+      <circle cx="8.5" cy="14.5" r="1.6" stroke="currentColor" strokeWidth="1.2" />
+      {/* D-pad */}
+      <path d="M13.5 13.5 H14.5 M14 13 V14" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" />
+      {/* Face buttons (△○□× simplified) */}
+      <circle cx="16.5" cy="13" r="0.7" fill="currentColor" />
+      <circle cx="18" cy="14.5" r="0.7" fill="currentColor" />
+      <circle cx="16.5" cy="16" r="0.7" fill="currentColor" />
+      <circle cx="15" cy="14.5" r="0.7" fill="currentColor" />
     </svg>
   );
 }
