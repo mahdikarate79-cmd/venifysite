@@ -1,6 +1,5 @@
 'use client';
 
-import { motion } from 'framer-motion';
 import { useLocale } from '@/i18n/LocaleProvider';
 import { GamesIcon, ChatIcon, HelpIcon, ProfileIcon } from '@/components/icons/NavIcons';
 
@@ -23,7 +22,7 @@ export default function BottomNav({ active, onNavigate }: BottomNavProps) {
   return (
     <nav className="fixed bottom-0 inset-x-0 z-30 pb-safe">
       <div className="flex items-center justify-center gap-3 px-4 pb-6 pt-2">
-        <div className="glass-nav-group flex items-center">
+        <div className="surface-nav-group flex items-center">
           {centerItems.map((item) => {
             const Icon = item.icon;
             const isActive = active === item.id;
@@ -36,19 +35,12 @@ export default function BottomNav({ active, onNavigate }: BottomNavProps) {
                 aria-label={item.label}
                 aria-current={isActive ? 'page' : undefined}
                 onClick={() => !item.disabled && onNavigate(item.id)}
-                className={`nav-btn relative ${isActive ? 'nav-btn-active' : ''} ${
+                className={`nav-btn ${isActive ? 'nav-btn-active' : ''} ${
                   item.disabled ? 'nav-btn-disabled' : ''
                 }`}
               >
-                {isActive && (
-                  <motion.div
-                    layoutId="nav-glow"
-                    className="absolute inset-1 rounded-2xl bg-accent/15"
-                    transition={{ type: 'spring', stiffness: 400, damping: 30 }}
-                  />
-                )}
                 <Icon
-                  className={`relative z-10 w-6 h-6 transition-colors duration-300 ${
+                  className={`w-6 h-6 transition-opacity duration-150 ${
                     isActive ? 'text-accent' : item.disabled ? 'text-white/30' : 'text-white/60'
                   }`}
                   size={24}
@@ -62,7 +54,7 @@ export default function BottomNav({ active, onNavigate }: BottomNavProps) {
           type="button"
           disabled
           aria-label={t.profile}
-          className="glass-nav-single nav-btn nav-btn-disabled"
+          className="surface-nav-single nav-btn nav-btn-disabled"
         >
           <ProfileIcon className="w-6 h-6 text-white/30" size={24} />
         </button>
